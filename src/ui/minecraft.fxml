@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MinecraftController">
+   <children>
+      <HBox layoutX="78.0" layoutY="319.0" prefHeight="66.66" prefWidth="600.0">
+         <children>
+            <Pane fx:id="pos1" prefHeight="66.66" prefWidth="66.66">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Cobblestone.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="37.0" layoutY="41.0" text="64" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pos2" prefHeight="66.66" prefWidth="66.66">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Cobblestone.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="37.0" layoutY="41.0" text="64" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pos3" prefHeight="66.66" prefWidth="66.66">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Cobblestone.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="37.0" layoutY="41.0" text="64" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pos4" prefHeight="66.66" prefWidth="66.66">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Cobblestone.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="37.0" layoutY="41.0" text="64" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pos5" prefHeight="66.66" prefWidth="66.66">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Cobblestone.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="37.0" layoutY="41.0" text="64" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pos6" prefHeight="66.66" prefWidth="66.66">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Cobblestone.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="37.0" layoutY="41.0" text="64" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pos7" prefHeight="66.66" prefWidth="66.66">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Cobblestone.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="37.0" layoutY="41.0" text="64" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pos8" prefHeight="66.66" prefWidth="66.66">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Cobblestone.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="37.0" layoutY="41.0" text="64" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pos9" prefHeight="66.66" prefWidth="66.66">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Cobblestone.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="37.0" layoutY="41.0" text="64" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</Pane>
