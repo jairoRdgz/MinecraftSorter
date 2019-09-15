@@ -2,7 +2,10 @@ package ui;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -19,6 +22,9 @@ public class MinecraftController {
     @FXML
     private URL location;
 
+    @FXML
+    private Pane pos0;
+    
     @FXML
     private Pane pos1;
 
@@ -45,12 +51,24 @@ public class MinecraftController {
 
     @FXML
     private Pane pos9;
+    
+    @FXML
+    private Button next;
+    
+    @FXML
+    void next(ActionEvent event) {
+    	System.out.println("tu puta madre");
+    }
 
     @FXML
     void initialize() {
     	
     	Image backGround = new Image("Images/square.jpg");
+    	Image nextButton = new Image("Images/nextB.png");
     	
+    	next.setBackground(new Background(new BackgroundImage(nextButton, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(60, 60, false, false, false, true))));
+    	
+    	pos0.setBackground(new Background(new BackgroundImage(backGround, BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT , BackgroundPosition.CENTER, new BackgroundSize(66.66, 66.66, false, false, false, true))));
     	pos1.setBackground(new Background(new BackgroundImage(backGround, BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT , BackgroundPosition.CENTER, new BackgroundSize(66.66, 66.66, false, false, false, false))));
     	pos2.setBackground(new Background(new BackgroundImage(backGround, BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT , BackgroundPosition.CENTER, new BackgroundSize(66.66, 66.66, false, false, false, false))));
     	pos3.setBackground(new Background(new BackgroundImage(backGround, BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT , BackgroundPosition.CENTER, new BackgroundSize(66.66, 66.66, false, false, false, false))));
