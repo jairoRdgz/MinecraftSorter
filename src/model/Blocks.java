@@ -6,7 +6,6 @@ public class Blocks {
 	private int quantify;
 	
 	public Blocks(int tag, int quantify) {
-		super();
 		this.tag = tag;
 		this.quantify = quantify;
 	}
@@ -18,7 +17,6 @@ public class Blocks {
 			quantify += diference;
 			block.setQuantify(block.getQuantify()-diference);
 		}
-//		return block;
 	}
 	
 	public int getTag() {
@@ -33,6 +31,4 @@ public class Blocks {
 	public void setQuantify(int quantify) {
 		this.quantify = quantify;
 	}
-	
-	
 }
