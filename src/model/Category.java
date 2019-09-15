@@ -1,0 +1,12 @@
+package model;
+
+public enum Category {
+	ANDESITE,
+	BOOKSHELF,
+	BRICKS,
+	CHEST,
+	COBBLESTONE,
+	CRAFTINGTABLE,
+	DIAMOND,
+	DIORITE;
+}
