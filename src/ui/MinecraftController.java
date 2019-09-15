@@ -2,6 +2,9 @@ package ui;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory.Default;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -64,87 +67,9 @@ public class MinecraftController {
 
     @FXML
     private Button next;
-
+    
     @FXML
-    private Pane pos11;
-
-    @FXML
-    private Pane pos21;
-
-    @FXML
-    private Pane pos31;
-
-    @FXML
-    private Pane pos41;
-
-    @FXML
-    private Pane pos51;
-
-    @FXML
-    private Pane pos61;
-
-    @FXML
-    private Pane pos71;
-
-    @FXML
-    private Pane pos81;
-
-    @FXML
-    private Pane pos91;
-
-    @FXML
-    private Pane pos12;
-
-    @FXML
-    private Pane pos22;
-
-    @FXML
-    private Pane pos32;
-
-    @FXML
-    private Pane pos42;
-
-    @FXML
-    private Pane pos52;
-
-    @FXML
-    private Pane pos62;
-
-    @FXML
-    private Pane pos72;
-
-    @FXML
-    private Pane pos82;
-
-    @FXML
-    private Pane pos92;
-
-    @FXML
-    private Pane pos13;
-
-    @FXML
-    private Pane pos23;
-
-    @FXML
-    private Pane pos33;
-
-    @FXML
-    private Pane pos43;
-
-    @FXML
-    private Pane pos53;
-
-    @FXML
-    private Pane pos63;
-
-    @FXML
-    private Pane pos73;
-
-    @FXML
-    private Pane pos83;
-
-    @FXML
-    private Pane pos93;
+    private Pane wall;
 
     @FXML
     private ChoiceBox<String> blockList;
@@ -160,6 +85,8 @@ public class MinecraftController {
     
     private int amount;
     
+    private int allBlocks;
+    
     private void messageAlert(String message) {
     	Alert info = new Alert(AlertType.ERROR);
     	info.setTitle("Minecraft");
@@ -174,17 +101,108 @@ public class MinecraftController {
     	String value = addedAmount.getText();
     	if(value.equals("")) {
     	}else {
-    		if(Integer.parseInt(value)<=64) {
-        		preNumber.setText(addedAmount.getText());
+    		if(Integer.parseInt(value)<=64*4*9) {
+        		if(Integer.parseInt(value)>64) {
+        			preNumber.setText("+64");
+        		}else {
+        			preNumber.setText(addedAmount.getText());
+        		}
         	}else {
-        		messageAlert("Please introduce a valid number (The max value is a stack or 64 elements)");
+        		messageAlert("Sorry But there is no more space in the inventary");
         	}
     	}
+    	previewBLocks();
     }
 
-    @FXML
-    private void previewBLocks(MouseEvent event) {
-    	messageAlert("Sisa perro vi el bloque");
+    private void previewBLocks() {
+    	
+    	String block = blockList.getValue()+"";
+    	switch(block) {
+    	 case "Andesite":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Bookshelf":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Bricks":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Chest":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Coal":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Cobblestone":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Crafting Table":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Diamond":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Diorite":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Dirt":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Furnace":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Glass":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "GlassPane":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Gold":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Granite":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "HayBale":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Iron":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "OakWood":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "OakWoodenPlanks":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Obsidian":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Pumpkin":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Quartz":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Sand":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "SoulSand":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "Stone":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "TNT":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    	 	break;
+    	 case "Wool":
+    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 break;
+    	 case "":
+    	 	System.out.println("no hay nada");
+    	 	break;
+    	}
     }
     
     private void setComboBoxElements() {
@@ -234,10 +252,13 @@ public class MinecraftController {
     }
     
     private void setBackgrounds() {
-    	Image backGround = new Image("Images/square.jpg");
     	Image nextButton = new Image("Images/nextB.png");
     	next.setBackground(new Background(new BackgroundImage(nextButton, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(60, 60, false, false, false, true))));
-
+    	
+    	Image fondo = new Image("Images/fondo.jpg");
+    	wall.setBackground(new Background(new BackgroundImage(fondo, null, null, null, null)));
+    	
+    	Image backGround = new Image("Images/square.jpg");
     	pos0.setBackground(new Background(new BackgroundImage(backGround, BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT , BackgroundPosition.CENTER, new BackgroundSize(66.66, 66.66, false, false, false, true))));
     	pos1.setBackground(new Background(new BackgroundImage(backGround, BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT , BackgroundPosition.CENTER, new BackgroundSize(66.66, 66.66, false, false, false, false))));
     	pos2.setBackground(new Background(new BackgroundImage(backGround, BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT , BackgroundPosition.CENTER, new BackgroundSize(66.66, 66.66, false, false, false, false))));
@@ -257,6 +278,7 @@ public class MinecraftController {
     	setBackgrounds();
     	setComboBoxElements();
     	amount = 0;
+    	allBlocks = 0;
     }
 }
 
