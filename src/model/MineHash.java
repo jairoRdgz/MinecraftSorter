@@ -1,7 +1,7 @@
 package model;
 
-//import java.util.Hashtable;
+import java.util.Hashtable;
 
 public class MineHash {
-	//public Hashtable<K, V> este;
+	public Hashtable<Integer, Block> inventory;
 }
