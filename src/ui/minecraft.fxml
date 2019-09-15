@@ -22,7 +22,7 @@
          <children>
             <Pane fx:id="pos1" prefHeight="66.66" prefWidth="66.66">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="obj1" fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/Cobblestone.png" />
                      </image>
@@ -36,7 +36,7 @@
             </Pane>
             <Pane fx:id="pos2" prefHeight="66.66" prefWidth="66.66">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="obj2" fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/Cobblestone.png" />
                      </image>
@@ -50,7 +50,7 @@
             </Pane>
             <Pane fx:id="pos3" prefHeight="66.66" prefWidth="66.66">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="obj3" fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/Cobblestone.png" />
                      </image>
@@ -64,7 +64,7 @@
             </Pane>
             <Pane fx:id="pos4" prefHeight="66.66" prefWidth="66.66">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="obj4" fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/Cobblestone.png" />
                      </image>
@@ -78,7 +78,7 @@
             </Pane>
             <Pane fx:id="pos5" prefHeight="66.66" prefWidth="66.66">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="obj5" fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/Cobblestone.png" />
                      </image>
@@ -92,7 +92,7 @@
             </Pane>
             <Pane fx:id="pos6" prefHeight="66.66" prefWidth="66.66">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="obj6" fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/Cobblestone.png" />
                      </image>
@@ -106,7 +106,7 @@
             </Pane>
             <Pane fx:id="pos7" prefHeight="66.66" prefWidth="66.66">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="obj7" fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/Cobblestone.png" />
                      </image>
@@ -120,7 +120,7 @@
             </Pane>
             <Pane fx:id="pos8" prefHeight="66.66" prefWidth="66.66">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="obj8" fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/Cobblestone.png" />
                      </image>
@@ -134,7 +134,7 @@
             </Pane>
             <Pane fx:id="pos9" prefHeight="66.66" prefWidth="66.66">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="obj9" fitHeight="65.0" fitWidth="60.0" layoutX="6.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/Cobblestone.png" />
                      </image>
@@ -148,7 +148,7 @@
             </Pane>
          </children>
       </HBox>
-      <Pane fx:id="pos0" layoutX="5.0" layoutY="454.0" prefHeight="60.0" prefWidth="67.0">
+      <Pane fx:id="pos0" layoutX="5.0" layoutY="446.0" prefHeight="67.0" prefWidth="67.0">
          <children>
             <Label fx:id="pos" alignment="CENTER" contentDisplay="CENTER" layoutX="-5.0" layoutY="-137.0" prefHeight="80.0" prefWidth="77.0" text="n" textFill="WHITE" translateY="130.0">
                <font>

@@ -26,38 +26,68 @@ import javafx.stage.StageStyle;
 
 public class MinecraftController {
 
-    @FXML
+	@FXML
     private ResourceBundle resources;
 
     @FXML
     private URL location;
 
     @FXML
+    private Pane wall;
+
+    @FXML
     private Pane pos1;
+
+    @FXML
+    private ImageView obj1;
 
     @FXML
     private Pane pos2;
 
     @FXML
+    private ImageView obj2;
+
+    @FXML
     private Pane pos3;
+
+    @FXML
+    private ImageView obj3;
 
     @FXML
     private Pane pos4;
 
     @FXML
+    private ImageView obj4;
+
+    @FXML
     private Pane pos5;
+
+    @FXML
+    private ImageView obj5;
 
     @FXML
     private Pane pos6;
 
     @FXML
+    private ImageView obj6;
+
+    @FXML
     private Pane pos7;
+
+    @FXML
+    private ImageView obj7;
 
     @FXML
     private Pane pos8;
 
     @FXML
+    private ImageView obj8;
+
+    @FXML
     private Pane pos9;
+
+    @FXML
+    private ImageView obj9;
 
     @FXML
     private Pane pos0;
@@ -67,9 +97,6 @@ public class MinecraftController {
 
     @FXML
     private Button next;
-    
-    @FXML
-    private Pane wall;
 
     @FXML
     private ChoiceBox<String> blockList;
@@ -83,7 +110,7 @@ public class MinecraftController {
     @FXML
     private Label preNumber;
     
-    private int amount;
+    private int diferentBLocks;
     
     private int allBlocks;
     
@@ -99,11 +126,14 @@ public class MinecraftController {
     @FXML
     private void preview() {
     	String value = addedAmount.getText();
+    	
     	if(value.equals("")) {
     	}else {
-    		if(Integer.parseInt(value)<=64*4*9) {
+    		allBlocks = Integer.parseInt(value);
+    		if(Integer.parseInt(value)<=allBlocks) {
         		if(Integer.parseInt(value)>64) {
         			preNumber.setText("+64");
+        			
         		}else {
         			preNumber.setText(addedAmount.getText());
         		}
@@ -137,7 +167,7 @@ public class MinecraftController {
     		 prevImage.setImage(new Image("Images/"+block+".png"));
     		 break;
     	 case "Crafting Table":
-    		 prevImage.setImage(new Image("Images/"+block+".png"));
+    		 prevImage.setImage(new Image("Images/"+"CraftingTable"+".png"));
     		 break;
     	 case "Diamond":
     		 prevImage.setImage(new Image("Images/"+block+".png"));
@@ -237,18 +267,23 @@ public class MinecraftController {
     
     @FXML
     private void addBlocks(ActionEvent event) {
-    	amount++;
+    	diferentBLocks++;
     }
 
     @FXML
     private void next(ActionEvent event) {
+    	clearPreview();
     	if(pos.getText().equals("n")) {
     		pos.setText("1");
-    	}else if(Integer.parseInt(pos.getText())<amount){
+    	}else if(Integer.parseInt(pos.getText())<diferentBLocks){
     		pos.setText((Integer.parseInt(pos.getText())+1)+"");
     	}else {
     		pos.setText("1");
     	}
+    }
+    
+    private void clearPreview() {
+    	
     }
     
     private void setBackgrounds() {
@@ -277,7 +312,7 @@ public class MinecraftController {
     	preview();
     	setBackgrounds();
     	setComboBoxElements();
-    	amount = 0;
+    	diferentBLocks = 0;
     	allBlocks = 0;
     }
 }
