@@ -10,8 +10,11 @@ public class Blocks {
 		this.quantify = quantify;
 	}
 	public void addBlocks(Blocks block) {
-		if(quantify+block.getQuantify()<64) {
-			quantify += block.quantify;
+		int temp = quantify;
+		if(temp+block.getQuantify()<64) {
+			quantify = quantify+block.getQuantify();
+			System.out.println("monto:"+quantify);
+			block.setQuantify(0);
 		}else {
 			int diference = quantify - 64;
 			quantify += diference;
