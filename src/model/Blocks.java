@@ -13,15 +13,16 @@ public class Blocks {
 		int temp = quantify;
 		if(temp+block.getQuantify()<64) {
 			quantify = quantify+block.getQuantify();
-			System.out.println("monto:"+quantify);
 			block.setQuantify(0);
-		}else {
-			int diference = quantify - 64;
-			quantify += diference;
-			block.setQuantify(block.getQuantify()-diference);
+		}else if(temp+block.getQuantify()>64){
+			int max = temp>block.getQuantify()?temp:block.getQuantify();
+			int min = temp<block.getQuantify()?temp:block.getQuantify();
+			int extraQuantity = (max-64)+min;
+			int f = 64-max;
+			quantify = max+f;
+			block.setQuantify(extraQuantity);
 		}
 	}
-	
 	public int getTag() {
 		return tag;
 	}
