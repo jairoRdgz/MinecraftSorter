@@ -69,28 +69,18 @@ public class MineHash {
 		Blocks temp;
 		for (int i = 0; i <= 3 && add == false; i++) {
 			flag = false;
-			System.out.println("HASH");
 			for (int j = 0; j <= 8 && flag == false; j++) {
-			//	System.out.println("QUEUE");
-				//System.out.println("size:" + inventory.get(0).size());
-				//System.out.println("tag:" + block.getTag());
-				//System.out.println("quantify:" + block.getQuantify());
-				//System.out.println("time:" + j);
 				if (inventory.get(i).size() == 0) {
 					inventory.get(i).add(block);
 					flag = true;
 					add = true;
-					// System.out.println("f");
 				} else if (inventory.get(i).peek().getTag() == block.getTag()) {
 					if (inventory.get(i).peek().getQuantify() < 64) {
 						inventory.get(i).peek().addBlocks(block);
 						if (block.getQuantify() == 0) {
 							flag = true;
 							add = true;
-							System.out.println("entry for 0");
-
 						} else {
-//							flag = true;
 							temp = inventory.get(i).poll();
 							inventory.get(i).add(temp);
 						}
@@ -100,18 +90,9 @@ public class MineHash {
 					flag = true;
 					add = true;
 				}
-//				else if(inventory.get(i).peek().getTag()!=block.getTag()){
-//					inventory.get(i).add(block);
-//					flag = true;
-//					add = true;
-//					System.out.println("entry");
-//
-//				}
 				else {
 					temp = inventory.get(i).poll();
 					inventory.get(i).add(temp);
-//					System.out.println("entry");
-
 				}
 			}
 		}

@@ -55,20 +55,23 @@ public class MinecraftController {
 	@FXML
 	private Label pos;
 
-	@FXML
-	private ImageView obj1;
+    @FXML
+    private ImageView obj1;
 
-	@FXML
-	private ImageView obj11;
+    @FXML
+    private Label amount1;
 
-	@FXML
-	private ImageView obj111;
+    @FXML
+    private ImageView obj2;
 
-	@FXML
-	private ImageView obj1111;
+    @FXML
+    private Label amount2;
 
-	@FXML
-	private ImageView obj11111;
+    @FXML
+    private ImageView obj3;
+
+    @FXML
+    private Label amount3;
 
 	@FXML
 	private void addBlocks(ActionEvent event) {
@@ -260,6 +263,14 @@ public class MinecraftController {
 		info.initStyle(StageStyle.UTILITY);
 		info.setContentText(message);
 		info.show();
+	}
+
+	private void print() {	
+		for (int i = 0; i < mineHash.getInventory().size(); i++) {
+			if (mineHash.getInventory().get(i).peek() != null) {
+				amount1.setText(mineHash.getInventory().get(i).peek().getQuantify() +"");
+			}
+		}
 	}
 
 	@FXML
