@@ -4,86 +4,111 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.StageStyle;
 
 public class MinecraftController {
-	
-	private int diferentBLocks;
+
 	private int allBlocks;
-	
-    @FXML
-    private ResourceBundle resources;
+	int diferentBLocks;
 
-    @FXML
-    private URL location;
+	@FXML
+	private ResourceBundle resources;
 
-    @FXML
-    private Pane wall;
+	@FXML
+	private URL location;
 
-    @FXML
-    private Pane pos0;
+	@FXML
+	private Pane wall;
 
-    @FXML
-    private Button next;
+	@FXML
+	private Pane pos0;
 
-    @FXML
-    private ChoiceBox<String> blockList;
+	@FXML
+	private Button next;
 
-    @FXML
-    private TextField addedAmount;
+	@FXML
+	private ChoiceBox<String> blockList;
 
-    @FXML
-    private Label preNumber;
+	@FXML
+	private TextField addedAmount;
 
-    @FXML
-    private ImageView prevImage;
+	@FXML
+	private Label preNumber;
 
-    @FXML
-    private Label pos;
+	@FXML
+	private ImageView prevImage;
 
-    @FXML
-    private ImageView obj1;
+	@FXML
+	private Label pos;
 
-    @FXML
-    private ImageView obj11;
+	@FXML
+	private ImageView obj1;
 
-    @FXML
-    private ImageView obj111;
+	@FXML
+	private ImageView obj11;
 
-    @FXML
-    private ImageView obj1111;
+	@FXML
+	private ImageView obj111;
 
-    @FXML
-    private ImageView obj11111;
+	@FXML
+	private ImageView obj1111;
 
-    @FXML
-    void addBlocks(ActionEvent event) {
+	@FXML
+	private ImageView obj11111;
 
-    }
+	@FXML
+	private void addBlocks(ActionEvent event) {
 
-    @FXML
-    void next(ActionEvent event) {
+	}
 
-    }
+	@FXML
+	private void next(ActionEvent event) {
+		if (pos.getText().equals("n")) {
+			pos.setText("1");
+		} else if (Integer.parseInt(pos.getText()) < diferentBLocks) {
+			pos.setText((Integer.parseInt(pos.getText()) + 1) + "");
+		} else {
+			pos.setText("1");
+		}
+	}
 
-    @FXML
-    void preview(ActionEvent event) {
+	@FXML
+	private void preview() {
+		String value = addedAmount.getText();
+		if (value.equals("")) {
+		} else {
+			allBlocks = Integer.parseInt(value);
+			if (Integer.parseInt(value) <= allBlocks) {
+				if (Integer.parseInt(value) > 64) {
+					preNumber.setText("+64");
 
-    }
+				} else {
+					preNumber.setText(addedAmount.getText());
+				}
+			} else {
+				messageAlert("Sorry But there is no more space in the inventary");
+			}
+		}
+		previewBLocks();
+	}
 
-    @FXML
-    void initialize() {
-    	setComboBoxElements();
-    	diferentBLocks = 0;
+	@FXML
+	private void initialize() {
+		preview();
+		setComboBoxElements();
 		allBlocks = 0;
-    }
-    
-	protected void setComboBoxElements() {
+	}
+
+	private void setComboBoxElements() {
 		blockList.getItems().add("Andesite");
 		blockList.getItems().add("Bookshelf");
 		blockList.getItems().add("Bricks");
@@ -111,5 +136,104 @@ public class MinecraftController {
 		blockList.getItems().add("Stone");
 		blockList.getItems().add("TNT");
 		blockList.getItems().add("Wool");
+	}
+
+	protected void previewBLocks() {
+		String block = blockList.getValue() + "";
+		switch (block) {
+		case "Andesite":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Bookshelf":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Bricks":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Chest":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Coal":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Cobblestone":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Crafting Table":
+			prevImage.setImage(new Image("Images/" + "CraftingTable" + ".png"));
+			break;
+		case "Diamond":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Diorite":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Dirt":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Furnace":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Glass":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "GlassPane":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Gold":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Granite":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "HayBale":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Iron":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "OakWood":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "OakWoodenPlanks":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Obsidian":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Pumpkin":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Quartz":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Sand":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "SoulSand":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Stone":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "TNT":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "Wool":
+			prevImage.setImage(new Image("Images/" + block + ".png"));
+			break;
+		case "":
+			System.out.println("no hay nada");
+			break;
+		}
+	}
+	
+	private void messageAlert(String message) {
+		Alert info = new Alert(AlertType.ERROR);
+		info.setTitle("Minecraft");
+		info.setHeaderText(null);
+		info.initStyle(StageStyle.UTILITY);
+		info.setContentText(message);
+		info.show();
 	}
 }
