@@ -60,6 +60,12 @@ public class MinecraftController {
 
     @FXML
     private Label amount1;
+    
+    @FXML
+    private ImageView obj2;
+
+    @FXML
+    private Label amount2;
 
 	@FXML
 	private void addBlocks(ActionEvent event) {
@@ -254,10 +260,103 @@ public class MinecraftController {
 		info.show();
 	}
 
-	private void print() {	
+	private void print() {
+		boolean busyPos = false;
+		
 		for (int i = 0; i < mineHash.getInventory().size(); i++) {
-			if (blockList.getValue().equals("Diamond")) {
-				obj1.setImage(new Image("Images/Diamond.png"));
+			//if (blockList.getValue().equals("Diamond")) {
+			//	obj1.setImage(new Image("Images/Diamond.png"));
+			//}
+			if(!busyPos) {
+				String block = blockList.getValue() + "";
+				switch (block) {
+				case "Andesite":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Bookshelf":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Bricks":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Chest":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Coal":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Cobblestone":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Crafting Table":
+					obj1.setImage(new Image("Images/" + "CraftingTable" + ".png"));
+					break;
+				case "Diamond":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Diorite":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Dirt":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Furnace":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Glass":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "GlassPane":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Gold":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Granite":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "HayBale":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Iron":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "OakWood":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "OakWoodenPlanks":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Obsidian":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Pumpkin":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Quartz":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Sand":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "SoulSand":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Stone":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "TNT":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "Wool":
+					obj1.setImage(new Image("Images/" + block + ".png"));
+					break;
+				case "":
+					System.out.println("no hay nada");
+					break;
+				}
+			}else {
+				
 			}
 			if (mineHash.getInventory().get(i).peek() != null) {
 				amount1.setText(mineHash.getInventory().get(i).peek().getQuantify() +"");
