@@ -61,21 +61,10 @@ public class MinecraftController {
     @FXML
     private Label amount1;
 
-    @FXML
-    private ImageView obj2;
-
-    @FXML
-    private Label amount2;
-
-    @FXML
-    private ImageView obj3;
-
-    @FXML
-    private Label amount3;
-
 	@FXML
 	private void addBlocks(ActionEvent event) {
 		mineHash.addBlock(new Blocks(id, Integer.parseInt(addedAmount.getText())));
+		print();
 	}
 
 	@FXML
@@ -267,6 +256,9 @@ public class MinecraftController {
 
 	private void print() {	
 		for (int i = 0; i < mineHash.getInventory().size(); i++) {
+			if (blockList.getValue().equals("Diamond")) {
+				obj1.setImage(new Image("Images/Diamond.png"));
+			}
 			if (mineHash.getInventory().get(i).peek() != null) {
 				amount1.setText(mineHash.getInventory().get(i).peek().getQuantify() +"");
 			}
