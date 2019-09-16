@@ -14,11 +14,16 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.StageStyle;
+import model.Blocks;
+import model.MineHash;
 
 public class MinecraftController {
 
+	private MineHash mineHash;
+
 	private int allBlocks;
-	int diferentBLocks;
+	private int diferentBLocks;
+	private int id;
 
 	@FXML
 	private ResourceBundle resources;
@@ -50,24 +55,27 @@ public class MinecraftController {
 	@FXML
 	private Label pos;
 
-	@FXML
-	private ImageView obj1;
+    @FXML
+    private ImageView obj1;
 
-	@FXML
-	private ImageView obj11;
+    @FXML
+    private Label amount1;
 
-	@FXML
-	private ImageView obj111;
+    @FXML
+    private ImageView obj2;
 
-	@FXML
-	private ImageView obj1111;
+    @FXML
+    private Label amount2;
 
-	@FXML
-	private ImageView obj11111;
+    @FXML
+    private ImageView obj3;
+
+    @FXML
+    private Label amount3;
 
 	@FXML
 	private void addBlocks(ActionEvent event) {
-
+		mineHash.addBlock(new Blocks(id, Integer.parseInt(addedAmount.getText())));
 	}
 
 	@FXML
@@ -99,13 +107,6 @@ public class MinecraftController {
 			}
 		}
 		previewBLocks();
-	}
-
-	@FXML
-	private void initialize() {
-		preview();
-		setComboBoxElements();
-		allBlocks = 0;
 	}
 
 	private void setComboBoxElements() {
@@ -143,91 +144,118 @@ public class MinecraftController {
 		switch (block) {
 		case "Andesite":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 1;
 			break;
 		case "Bookshelf":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 2;
 			break;
 		case "Bricks":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 3;
 			break;
 		case "Chest":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 4;
 			break;
 		case "Coal":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 5;
 			break;
 		case "Cobblestone":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 6;
 			break;
 		case "Crafting Table":
 			prevImage.setImage(new Image("Images/" + "CraftingTable" + ".png"));
+			id = 7;
 			break;
 		case "Diamond":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 8;
 			break;
 		case "Diorite":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 9;
 			break;
 		case "Dirt":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 10;
 			break;
 		case "Furnace":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 11;
 			break;
 		case "Glass":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 12;
 			break;
 		case "GlassPane":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 13;
 			break;
 		case "Gold":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 14;
 			break;
 		case "Granite":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 15;
 			break;
 		case "HayBale":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 16;
 			break;
 		case "Iron":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 17;
 			break;
 		case "OakWood":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 18;
 			break;
 		case "OakWoodenPlanks":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 19;
 			break;
 		case "Obsidian":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 20;
 			break;
 		case "Pumpkin":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 21;
 			break;
 		case "Quartz":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 22;
 			break;
 		case "Sand":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 23;
 			break;
 		case "SoulSand":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 24;
 			break;
 		case "Stone":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 25;
 			break;
 		case "TNT":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 26;
 			break;
 		case "Wool":
 			prevImage.setImage(new Image("Images/" + block + ".png"));
+			id = 27;
 			break;
 		case "":
 			System.out.println("no hay nada");
 			break;
 		}
 	}
-	
+
 	private void messageAlert(String message) {
 		Alert info = new Alert(AlertType.ERROR);
 		info.setTitle("Minecraft");
@@ -235,5 +263,24 @@ public class MinecraftController {
 		info.initStyle(StageStyle.UTILITY);
 		info.setContentText(message);
 		info.show();
+	}
+
+	private void print() {	
+		for (int i = 0; i < mineHash.getInventory().size(); i++) {
+			if (mineHash.getInventory().get(i).peek() != null) {
+				amount1.setText(mineHash.getInventory().get(i).peek().getQuantify() +"");
+			}
+		}
+	}
+
+	@FXML
+	private void initialize() {
+		mineHash = new MineHash();
+		mineHash.init();
+		preview();
+		setComboBoxElements();
+		allBlocks = 0;
+		diferentBLocks = 0;
+		id = 0;
 	}
 }
