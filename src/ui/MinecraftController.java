@@ -71,6 +71,7 @@ public class MinecraftController {
 	private void addBlocks(ActionEvent event) {
 		mineHash.addBlock(new Blocks(id, Integer.parseInt(addedAmount.getText())));
 		print();
+		prevImage.setImage(null);
 	}
 
 	@FXML
