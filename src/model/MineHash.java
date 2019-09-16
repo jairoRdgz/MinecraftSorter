@@ -51,10 +51,6 @@ public class MineHash {
 
 	private Hashtable<Integer, Queue<Blocks>> inventory;
 
-	public MineHash() {
-		init();
-	}
-
 	public void init() {
 		inventory = new Hashtable<Integer, Queue<Blocks>>();
 		Queue<Blocks> queue0 = new LinkedList<Blocks>();
@@ -75,11 +71,11 @@ public class MineHash {
 			flag = false;
 			System.out.println("HASH");
 			for (int j = 0; j <= 8 && flag == false; j++) {
-				System.out.println("QUEUE");
-				System.out.println("size:" + inventory.get(0).size());
-				System.out.println("tag:" + block.getTag());
-				System.out.println("quantify:" + block.getQuantify());
-				System.out.println("time:" + j);
+			//	System.out.println("QUEUE");
+				//System.out.println("size:" + inventory.get(0).size());
+				//System.out.println("tag:" + block.getTag());
+				//System.out.println("quantify:" + block.getQuantify());
+				//System.out.println("time:" + j);
 				if (inventory.get(i).size() == 0) {
 					inventory.get(i).add(block);
 					flag = true;
